@@ -1,0 +1,16 @@
+env:
+  global:
+  - TERM=dumb
+
+language: java
+jdk: oraclejdk8
+
+install: true
+
+script:
+
+- bash gradlew >/dev/null 2>&1
+- java -jar build/libs/*-all.jar ./standalone.xml
+
+- bash mvnw clean package >/dev/null 2>&1
+- java -jar target/*-all.jar ./standalone-7.1.xml
