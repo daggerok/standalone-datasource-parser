@@ -10,7 +10,7 @@ install: true
 script:
 
 - bash gradlew >/dev/null 2>&1
-- java -jar build/libs/*-all.jar ./standalone.xml
+- java -jar build/libs/*-all.jar --standalone-file=./standalone.xml
 
 - bash mvnw clean package >/dev/null 2>&1
-- java -jar target/*-all.jar ./standalone-7.1.xml
+- java -jar target/*-all.jar --standalone-file=./standalone-7.1.xml
