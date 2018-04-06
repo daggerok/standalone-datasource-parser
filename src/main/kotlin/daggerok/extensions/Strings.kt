@@ -25,7 +25,7 @@ data class Server(@JacksonXmlElementWrapper(localName = "profile")
 fun Server.getMap(key: String): Map<*, *> =
     this.profile
         .orEmpty()
-        .first { it.containsKey("datasources") }
+        .first { it.containsKey(key) }
 
 fun Map<*, *>.getMap(key: String): Map<*, *> =
     if (this.containsKey(key)) this[key] as Map<*, *> else mapOf<Any, Any>()

@@ -16,7 +16,8 @@ To do so, we need few components:
 .using kotlin args-extension
 [sources,bash]
 ----
-java -jar target/*-all.jar --standalone-file=./standalone.xml
+./gradlew installDist
+bash build/install/standalone-datasource-parser-shadow/bin/standalone-datasource-parser --standalone-file=./standalone.xml
 ----
 
 .getting standalone.xml (JBOSS EAP 6.4)
